@@ -1,0 +1,8 @@
+.gradient-duo-tone-purple-to-blue {
+  background: linear-gradient(to right, purple, blue);
+  /* Adjust gradient colors and direction as needed */
+  padding: 2px 10px;
+}
+
+
+
