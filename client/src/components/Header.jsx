@@ -31,7 +31,7 @@ export default function Header() {
       </Button>
       <div className="flex gap-2 md:order-2">
         <Button
-          className="w-12 h-10 hidden sm:inline rounded-lg "
+          className="w-12 h-10 hidden lg:inline rounded-lg " // Show moon button on large screens
           color="gray"
           pill
         >
@@ -42,24 +42,18 @@ export default function Header() {
             Sign In
           </Button>
         </Link>
-        <Navbar.Toggle />
+        <Navbar.Toggle className="md:hidden" /> {/* Show toggle button only on small screens */}
       </div>
-      <Navbar.Collapse>
-        <a href="/" className={`navbar-link ${path === "/" ? "active" : ""}`}>
+      <Navbar.Collapse className="md:flex"> {/* Show navigation links only on large screens */}
+        <Link to="/" className={`navbar-link ${path === "/" ? "active" : ""}`}>
           Home
-        </a>
-        <a
-          href="/about"
-          className={`navbar-link ${path === "/about" ? "active" : ""}`}
-        >
+        </Link>
+        <Link to="/about" className={`navbar-link ${path === "/about" ? "active" : ""}`}>
           About
-        </a>
-        <a
-          href="/projects"
-          className={`navbar-link ${path === "/projects" ? "active" : ""}`}
-        >
+        </Link>
+        <Link to="/projects" className={`navbar-link ${path === "/projects" ? "active" : ""}`}>
           Projects
-        </a>
+        </Link>
       </Navbar.Collapse>
     </Navbar>
   );
